@@ -1,0 +1,70 @@
+:root {
+    --main-color: #7A41A3;
+    --accent-color: #41A36A;
+    --text-color: #2E3330;
+    --muted-text-color: #46394E;
+    --light-text-color: #ffffff;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--main-color);
+    color: var(--light-text-color)
+}
+.navbar-brand, .navbar-brand:hover {
+    color:#ffffff;
+}
+.navbar-nav .nav-link {
+    color: #ececec;
+}
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+.navbar-nav .nav-link.active {
+    color: #ffffff;
+    text-decoration: underline;
+}
+main {
+    flex: 1;
+}
+footer {
+    background: var(--text-color);
+    color: var(--light-text-color);
+}
+
+.payment-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+.payment-logos img {
+    max-height: 80px;
+    margin: 10px;
+}
+canvas {
+    margin: auto;
+    width: 100%;
+}
+
+.sub-fields {
+    margin-left: calc(.5* var(--bs-gutter-x));
+    border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;
+    border-color: var(--bs-dark-border-subtle)!important;
+}
+input[readonly], input[readonly]:active, input[readonly]:focus {
+    background-color: #f4f4f4;
+}
+.btn-shspu {
+    background-color: var(--shspu-color-dark);
+}
+.btn-shspu:active, .btn-shspu:focus, .btn-shspu:hover {
+    background-color: var(--shspu-color-dark-shadow);
+}
