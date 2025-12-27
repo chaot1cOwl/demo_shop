@@ -1,70 +1,67 @@
+/* переменные для цветов, размеров и т.п.*/
 :root {
-    --main-color: #7A41A3;
-    --accent-color: #41A36A;
-    --text-color: #2E3330;
-    --muted-text-color: #46394E;
-    --light-text-color: #ffffff;
-
+    --main-color: 122, 65, 163;
+    --accent-color: 65, 163, 106;
+    --text-color: 46, 51, 48;
+    --muted-text-color: 70, 57, 78;
+    --light-text-color: 255, 255, 255;
 }
 
+/* базовые стили для страниц */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    color: var(--text-color);
+    color: rbga(var(--text-color), 1);
 }
-
+/* верхняя строка */
 header {
-    background-color: var(--main-color);
-    color: var(--light-text-color)
+    background-color: rgba(var(--main-color), 1);
+    color: rgba(var(--light-text-color), 1)
 }
 .navbar-brand, .navbar-brand:hover {
-    color:#ffffff;
+    color:rgba(var(--light-text-color), 1);
 }
 .navbar-nav .nav-link {
-    color: #ececec;
+    color: rgba(var(--light-text-color), 0.8);
 }
 .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: rgba(var(--light-text-color), 1);
 }
 .navbar-nav .nav-link.active {
-    color: #ffffff;
+    color: rgba(var(--light-text-color), 1);
     text-decoration: underline;
 }
+/* основной контент */
 main {
     flex: 1;
 }
+/* футер */
 footer {
-    background: var(--text-color);
-    color: var(--light-text-color);
+    background: rgba(var(--text-color), 1);
+    color: rgba(var(--light-text-color), 1);
+}
+/* кнопки */
+.btn-shop {
+    background-color: rgba(var(--main-color), 1);
+    color: rgba(var(--light-text-color), 1);
+}
+.btn-shop:active, .btn-shop:focus, .btn-shop:hover {
+    background-color: rgba(var(--main-color), 1);
+    box-shadow: inset 0 0 100px -100px #00000033;
 }
 
-.payment-logos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1em;
+/* навигация (каталог) */
+.nav-link {
+    color: rgba(var(--main-color), 1);
 }
-.payment-logos img {
-    max-height: 80px;
-    margin: 10px;
+.nav-link:hover {
+    color: rgba(var(--light-text-color), 1);
+    background-color: rgba(var(--main-color), 0.75);
 }
-canvas {
-    margin: auto;
-    width: 100%;
+.nav-link.active {
+    color: rgba(var(--light-text-color), 1);
+    background-color: rgba(var(--main-color), 1);
 }
 
-.sub-fields {
-    margin-left: calc(.5* var(--bs-gutter-x));
-    border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;
-    border-color: var(--bs-dark-border-subtle)!important;
-}
-input[readonly], input[readonly]:active, input[readonly]:focus {
-    background-color: #f4f4f4;
-}
-.btn-shspu {
-    background-color: var(--shspu-color-dark);
-}
-.btn-shspu:active, .btn-shspu:focus, .btn-shspu:hover {
-    background-color: var(--shspu-color-dark-shadow);
-}
+/* карточки товаров */

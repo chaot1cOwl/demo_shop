@@ -1,4 +1,4 @@
-<main class="container my-2">
+<main class="container">
     <?php
         if (substr($uri,0,11) === "/?catalogue") require_once "catalogue.php";
         else if (substr($uri,0,6) === "/?cart") require_once "cart.php";
