@@ -17,6 +17,7 @@
 </head>
 <body>
 <?php
+if(session_status() !== PHP_SESSION_ACTIVE) session_start(); // запуск сессии если еще не начата
 $uri = $_SERVER['REQUEST_URI'];
 require_once 'header.php';
 require_once 'content.php';
