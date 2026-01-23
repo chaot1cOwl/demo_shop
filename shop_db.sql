@@ -69,7 +69,8 @@ CREATE TABLE `products` (
   `description` text NOT NULL DEFAULT 'Описание' COMMENT 'Описание товара',
   `image` varchar(4096) NOT NULL DEFAULT 'default.jpg' COMMENT 'Изображение товара',
   `price` int(11) NOT NULL COMMENT 'Цена товара',
-  `id_categories` int(11) NOT NULL COMMENT 'ID категории'
+  `id_categories` int(11) NOT NULL COMMENT 'ID категории',
+  `deleted` int(11) NOT NULL DEFAULT 0 COMMENT 'Флаг удаления товара'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Товары';
 
 --

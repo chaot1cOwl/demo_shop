@@ -3,7 +3,7 @@
 require_once "config.php"; 
 
 // готовим данные, которые будем возвращать
-$ret_data = ["error"=>0, "error_info"=>"", "categories"=>[]]; // готовим данные, которые будем возвращать
+$ret_data = ["error"=>0, "error_info"=>"", "products"=>[]]; // готовим данные, которые будем возвращать
 
 // включем нормальное отображение отчетов об ошибках sql
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
@@ -14,10 +14,11 @@ $db->set_charset('utf8mb4');
 // включаем нормальную работу с числовыми типами данных
 $db->options(MYSQLI_OPT_INT_AND_FLOAT_NATIVE, 1);
 // собираем строку запроса с учетом переданных фильтров
-$sql = "select p.*, c.name as category from products as p left join categories as c on c.id = p.id_categories";
+$sql = "select p.*, c.name as category from products as p left join categories as c on c.id = p.id_categories where deleted=0";
 if (isset($_POST["category"]) && $_POST["category"] != 'all') {
-  $sql .= ' where id_categories = ?';
+  $sql .= ' and id_categories = ?';
 }
+$sql .= " order by p.id desc"; // отсортируем продукты
 // подготавливаем запрос
 $stmt = $db->prepare($sql);
 // добавляем данные к запросу

@@ -5,23 +5,22 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Кофейку?</title> 
-  <link rel="icon" href="/assets/img/shop_logo.png" type="image/apng">
-  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-icons.min.css" />
-  <link rel="stylesheet" type="text/css" href="/assets/css/shop.css" />
-  <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
-  <script src="/assets/js/popper.min.js" type="text/javascript"></script>
-  <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="/assets/js/jquery.validate.min.js" type="text/javascript"></script>
-  <script src="/assets/js/jquery.captcha.min.js" type="text/javascript"></script>
+  <link rel="icon" href="./assets/img/shop_logo.png" type="image/apng">
+  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-icons.min.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/shop.css" />
+  <script src="./assets/js/jquery.min.js" type="text/javascript"></script>
+  <script src="./assets/js/popper.min.js" type="text/javascript"></script>
+  <script src="./assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="./assets/js/jquery.validate.min.js" type="text/javascript"></script>
+  <script src="./assets/js/jquery.captcha.min.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
 if(session_status() !== PHP_SESSION_ACTIVE) session_start(); // запуск сессии если еще не начата
-$uri = $_SERVER['REQUEST_URI'];
-require_once 'header.php';
-require_once 'content.php';
-require_once 'footer.php';
+require_once 'header.php'; // шаблон шапки
+require_once 'content.php'; // основной контент страницы
+require_once 'footer.php'; // шаблон футера
 ?>
 </body>
 </html>

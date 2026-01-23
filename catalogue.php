@@ -13,13 +13,13 @@
     let product = {id: ev.data.id, name: ev.data.name, price: ev.data.price}; // забираем переданную информацию о товаре
     $.ajax({
       type: "POST",
-      url: "/api/add_to_cart.php",
+      url: "./api/add_to_cart.php",
       data: product,
       dataType: "json",
       success: function(data) {
         if (data.error==0) { // если успешно выполнен запрос, то генерируем список ссылок
           // и показываем сообщение об успешном добавлении товара
-          $("#alertsContainer").html('<div id="alertOk" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true"><div class="d-flex"><div class="toast-body">'+ev.data.name+' добавлен в корзину<br><a href="/?cart" class="link-light">Перейти в корзину</a></div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div>');
+          $("#alertsContainer").html('<div id="alertOk" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true"><div class="d-flex"><div class="toast-body">'+ev.data.name+' добавлен в корзину<br><a href="./?cart" class="link-light">Перейти в корзину</a></div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div>');
           const alertToast = bootstrap.Toast.getOrCreateInstance($("#alertOk"));
           alertToast.show();
         } else {
@@ -42,11 +42,11 @@
   // запрос списка категорий товаров
   $.ajax({
     type: "POST",
-    url: "/api/get_categories.php",
+    url: "./api/get_categories.php",
     dataType: "json",
     success: function(data) {
       if (data.error==0) { // если успешно выполнен запрос, то генерируем список ссылок
-        tmp_uri = "/?catalogue&c="; //  базовый url для генерации ссылок
+        tmp_uri = "./?catalogue&c="; //  базовый url для генерации ссылок
         // первым элементом списка категорий ставим "Все", чтобы получить общий список товаров без учета категории
         url_all = tmp_uri + "all";
         li_item = $("<li></li>").attr("class", "nav-item").html("<a class='nav-link' href='"+url_all+"'>Все</a>");
@@ -71,7 +71,7 @@
   // запрос списка товаров с учетом текущих фильтров
   $.ajax({
     type: "POST",
-    url: "/api/get_products.php",
+    url: "./api/get_products.php",
     data: {category: cat}, // фильтры подключаем здесь
     dataType: "json",
     success: function(data) {
