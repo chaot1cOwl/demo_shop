@@ -20,7 +20,7 @@ if (isset($_POST["id"])) {
   // в рамках демо будем удалять записи из БД, но предварительно проверять нет ли ссылок на эти записи
 
   // сначала проверим есть ли товары в категории
-  $sql = "select * from products where id_categories=?";
+  $sql = "select * from products where id_categories=? and deleted=0";
   $stmt = $db->prepare($sql);
   // добавляем данные к запросу
   $stmt->bind_param('i', $_POST['id']);
