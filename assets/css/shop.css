@@ -94,3 +94,23 @@ footer {
 .product-card>.card-body>button {
     margin-top: 5px; 
 }
+
+/* баннеры на главной странице */
+.main-carousel .carousel-item {
+    height: 300px;
+    overflow: hidden;
+}
+.main-carousel img { /* размещаем картинки по центру */ 
+    object-fit: contain; /* определяем поведение картинки, оптимальные варианты: contain - вместить картинку во всю доступную высоту, cover - вместить картинку расширив до макс.ширины */
+    width: 100%;
+    height: 100%;
+}
+/* добавляем градиент для боковых блоков-кнопок карусели */
+.main-carousel .carousel-control-prev {
+    background-image: linear-gradient(to right, white, white 50%, transparent);
+    opacity: 1;
+}
+.main-carousel .carousel-control-next {
+    background-image: linear-gradient(to left, white, white 50%, transparent);
+    opacity: 1;
+}
