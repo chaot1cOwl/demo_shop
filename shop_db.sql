@@ -51,7 +51,7 @@ INSERT INTO `categories` (`id`, `name`, `parent`) VALUES
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `timecreated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp() COMMENT 'Дата и время оформления заказа',
+  `timecreated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Дата и время оформления заказа',
   `client_name` varchar(100) NOT NULL COMMENT 'Имя покупателя',
   `client_address` varchar(1000) NOT NULL COMMENT 'Адрес покупателя',
   `status` int(11) NOT NULL DEFAULT 0 COMMENT 'Статус заказа:\r\n0 - новый\r\n1 - выполнен\r\n100 - удален'
